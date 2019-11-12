@@ -1,8 +1,9 @@
 /*Default font & size using the universal selector */
-*{
+/**{
 	font-family:verdana,sans-serif;
 	font-size  :14pt;
 }
+*/
 
 /*Width of project, centers it horizontally,
 specifies background color and gives it a border. */
@@ -13,19 +14,10 @@ body{
 	border    :1px solid #888;
 }
 
+
 /*Sets the background color of the HTML section */
 html{
 	background:#fff;
-}
-
-/*Gives all images a border, shadow and
-a righthand margin */
-img{
-	border            :1px solid black;
-	margin-right      :15px;
-	-moz-box-shadow   :2px 2px 2px #888;
-	-webkit-box-shadow:2px 2px 2px #888;
-	box-shadow        :2px 2px 2px #888;
 }
 
 /*Sets the color in which <li> elements
