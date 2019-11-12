@@ -3,6 +3,7 @@ require_once 'header.php';
 echo "<div class='main'><h3>Please enter your details to log in</h3>";
 $error = $user = $pass = "";
 
+var_dump($_POST);
 if(isset($_POST['user'])){
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
@@ -10,7 +11,7 @@ if(isset($_POST['user'])){
     if($user == "" || $pass == "")
         echo "Not all fields were entered<br>";
    else{
-        $result = queryMysql("SELECT user,pass FROM memvers WHERE user='$user' AND pass='$pass'");
+        $result = queryMysql("SELECT user,pass FROM students WHERE user='$user' AND pass='$pass'");
         if($result->num_rows == 0){
             $error = "<span class='error'>Username/Password invalid</span><br><br>";
         }
@@ -25,10 +26,10 @@ if(isset($_POST['user'])){
 
 echo <<<_END
     <form method='post' action='login.php'>$error
-    <span class='fieldname'>Username </span><input type='text'
-    maxlength='16' name='user' value='$user'<br><br>
-    <span class='fieldname'>Password </span><input type='password'
-    maxlength='16' name='user' value='$pass'<br><br>
+    <span class='fieldname'>Username</span><input type='text'
+      maxlength='16' name='user' value='$user'><br>
+    <span class='fieldname'>Password</span><input type='password'
+      maxlength='16' name='pass' value='$pass'>
 _END;
 ?>
 
