@@ -5,7 +5,7 @@ $hn = 'sentinel.local'; //db hostname
 $un = 'root'; //db username
 $pw = ''; //db password
 $db = 'degreeplan'; //db name
-$appname = "CS Degree Plan";
+$appname = "My CS Degree Plan";
 
 $connection = new mysqli($hn,$un,$pw,$db);
 

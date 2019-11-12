@@ -17,7 +17,7 @@ if(isset($_POST['user'])){
         else{
             $_SESSION['user'] = $user;
             $_SESSION['pass'] = $pass;
-            die("You are now logged in. Please <a href='members.php?view=$user'>" . 
+            die("You are now logged in. Please <a href='degreeplan.php?view=$user'>" . 
                 "click here</a> to continue.<br><br>");
         }
    }
@@ -25,9 +25,9 @@ if(isset($_POST['user'])){
 
 echo <<<_END
     <form method='post' action='login.php'>$error
-    <span class='fieldname'>Username</span><input type='text'
+    <span class='fieldname'>Username </span><input type='text'
     maxlength='16' name='user' value='$user'<br><br>
-    <span class='fieldname'>Password</span><input type='password'
+    <span class='fieldname'>Password </span><input type='password'
     maxlength='16' name='user' value='$pass'<br><br>
 _END;
 ?>

@@ -9,6 +9,10 @@
 		<?php
             require_once 'functions.php';
             
+            createTable('students','user CHAR(8),
+                                    pass CHAR(4)');
+            
+            
             createTable('lowerdiv','coursenum VARCHAR(12),
                                     coursename VARCHAR(30),
                                     one CHAR(1),
