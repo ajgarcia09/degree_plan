@@ -10,12 +10,40 @@ $connection = new mysqli($hn,$un,$pw,$db);
 if($connection->connect_error) die($connection->connect_error);
 
 print_table("SELECT * FROM lowerdiv", "Lower Division Requirements (18)");
+echo "<button id='editButton'>".
+        "<a href='edit.php'>Edit Lower Division Requirements</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM core", "Core Curriculum (37)*");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Core Curriculum</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM othermath", "Other Required Mathematics Courses (12)");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Other Math Courses</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM freeelect", "Free Electives (3)*");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Free Electives</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM sciences", "Life & Physical Sciences (12)*");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Life & Physical Sciences</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM upperdiv", "Upper Division Requirements (23)");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Upper Division Requirements</a></button>";
+echo "<br><br>";
+
 print_table("SELECT * FROM techelect", "Technical Electives (15)*");
+echo "<button id='editButton'>".
+    "<a href='edit.php'>Edit Technical Electives</a></button>";
+echo "<br><br>";
+
 
 $connection->close();
 
