@@ -17,8 +17,16 @@ print_table("SELECT * FROM sciences", "Life & Physical Sciences (12)*");
 print_table("SELECT * FROM upperdiv", "Upper Division Requirements (23)");
 print_table("SELECT * FROM techelect", "Technical Electives (15)*");
 
-
 $connection->close();
+
+echo <<<_END
+<b>1,2,3 = Semester course was taken (1st attempt, 2nd attempt, 3rd attempt) </b><br>
+<b>GR = Grade Received (precede with 'T' if transfer grade)</b><br>
+<b>HR = Hours </b><br>
+<b>T = Transfer Credit </b><br>
+<b>(+) Minimum grade of C required </b><br>
+<b>(*) Click here for details</b>
+_END;
 
 function print_table($query,$table_title){
     global $connection;
@@ -26,17 +34,17 @@ function print_table($query,$table_title){
     if(!$result) die ($connection->connect_error);
     $rows = $result->num_rows;
     
-    echo "<th>$table_title</th>";
+    echo "<th><b>$table_title</b></th>";
     echo <<<_END
 <table>
  <tr>
-  <td align='center'>Course Number</td>
-  <td align='center'>Course Name</td>
-  <td align='center'>1</td>
-  <td align='center'>2</td>
-  <td align='center'>3</td>
-  <td align='center'>GR</td>
-  <td align='center'>HR</td>
+  <td><b>Course Number</b></td>
+  <td><b>Course Name</b></td>
+  <td><b>1</b></td>
+  <td><b>2</b></td>
+  <td><b>3</b></td>
+  <td><b>GR</b></td>
+  <td><b>HR</b></td>
  </tr>
  
 _END;

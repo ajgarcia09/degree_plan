@@ -1,15 +1,6 @@
-/*Default font & size using the universal selector */
-/**{
-	font-family:verdana,sans-serif;
-	font-size  :14pt;
-}
-*/
-
 /*Width of project, centers it horizontally,
 specifies background color and gives it a border. */
 body{
-	width     :700px;
-	margin    :20px auto;
 	background:#f8f8f8;
 	border    :1px solid #888;
 }
@@ -20,6 +11,24 @@ html{
 	background:#fff;
 }
 
+table{
+	border-collapse :collapse;
+	width           :100%;
+}
+
+td, th{
+	border    :1px solid #dddddd;
+	text-align:left;
+	padding   :8px; 
+}
+
+
+tr:nth-child(even){
+	background-color:#dddddd;
+	
+}
+
+
 /*Sets the color in which <li> elements
 and the button class should display text
 when hovered over */
@@ -27,11 +36,12 @@ li a:hover, .button:hover{
 	color:green;
 }
 
-/*Sets the properties for the heading */
+/*Sets the properties for the heading 
+My CS Degree Plan (Guest or username)*/
 .appname{
 	text-align :center;
-	background :#eb8;
-	color      :#40d;
+	background :#f6602d;
+	color      :#ffffff;
 	font-family:helvetica;
 	font-size  :20pt;
 	padding    :4px;
@@ -49,7 +59,8 @@ floating them */
 	margin-left:40px;
 }
 
-/*Displays important information */
+/*Displays important information:
+You must be logged in to view this page */
 .info{
 	background :lightgreen;
 	color      :blue;
