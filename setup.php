@@ -15,20 +15,17 @@
             
             createTable('lowerdiv','coursenum VARCHAR(12),
                                     coursename VARCHAR(30),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-            /*queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
+            queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
                         VALUES('CS 1401 +', 'Intro. to Computer Science', '4')");
           
             queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
                      VALUES('CS 2401 +', 'Elem. Data Struct./Algorithms', '4')");
-            
-            queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
-                        VALUES('cs 1234+', 'Intro', '4')");
             
             queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
                         VALUES('MATH 2300 +', 'Discrete Mathematics', '3')");
@@ -41,18 +38,18 @@
             
             queryMysql("INSERT INTO lowerdiv(coursenum,coursename,HR)
                         VALUES('EE 2169 +', 'Digital Systems Design I Lab', '1')");
-            */
+            
             
             createTable('core','coursenum VARCHAR(22),
                                     coursename VARCHAR(35),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
           
-           /* queryMysql("INSERT INTO core(coursenum,coursename,HR)
+           queryMysql("INSERT INTO core(coursenum,coursename,HR)
                         VALUES('RWS 1301 +', 'Rhetoric and Composition 1', '3')");
 
             queryMysql("INSERT INTO core(coursenum,coursename,HR)
@@ -91,17 +88,17 @@
             queryMysql("INSERT INTO core(coursenum,coursename,HR)
                         VALUES('POLS 2311 +', 'American Government & Politics', '3')");
             
-            */
+            
             
             createTable('othermath','coursenum VARCHAR(12),
                                     coursename VARCHAR(50),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-            /*queryMysql("INSERT INTO othermath(coursenum,coursename,HR)
+            queryMysql("INSERT INTO othermath(coursenum,coursename,HR)
                         VALUES('MATH 1312 +', 'Calculus II', '3')");
             
             queryMysql("INSERT INTO othermath(coursenum,coursename,HR)
@@ -112,28 +109,28 @@
             
             queryMysql("INSERT INTO othermath(coursenum,coursename,HR)
                         VALUES('STAT 3320', 'Probability & Statistics for CS', '3')");
-            */
+            
             
             createTable('freeelect','coursenum VARCHAR(12),
                                     coursename VARCHAR(50),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-          //  queryMysql("INSERT INTO freeelect(HR)
-            //            VALUES('3')");
+            queryMysql("INSERT INTO freeelect(HR)
+                       VALUES('3')");
             
             createTable('sciences','coursenum VARCHAR(12),
                                     coursename VARCHAR(50),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-            /*queryMysql("INSERT INTO sciences(coursenum,coursename,HR)
+            queryMysql("INSERT INTO sciences(coursenum,coursename,HR)
                         VALUES('PHYS 2420', 'Introductory Mechanics', '4')");
             
             queryMysql("INSERT INTO sciences(HR)
@@ -141,17 +138,17 @@
             
             queryMysql("INSERT INTO sciences(HR)
                         VALUES('4')");
-             */
+             
             
             createTable('upperdiv','coursenum VARCHAR(12),
                                     coursename VARCHAR(35),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-            /*queryMysql("INSERT INTO upperdiv(coursenum,coursename,HR)
+            queryMysql("INSERT INTO upperdiv(coursenum,coursename,HR)
                         VALUES('CS 3195', 'Jr. Professional Orientation', '1')");
             
             queryMysql("INSERT INTO upperdiv(coursenum,coursename,HR)
@@ -174,19 +171,16 @@
             
             queryMysql("INSERT INTO upperdiv(coursenum,coursename,HR)
                         VALUES('CS 4375', 'Theory of Operating Systems', '3')");
-            */
+            
             
             createTable('techelect','coursenum VARCHAR(12),
                                     coursename VARCHAR(50),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
             
-            /*queryMysql("INSERT INTO techelect(HR)
-                        VALUES('3')");
-            
             queryMysql("INSERT INTO techelect(HR)
                         VALUES('3')");
             
@@ -198,16 +192,19 @@
             
             queryMysql("INSERT INTO techelect(HR)
                         VALUES('3')");
-             */
             
-            /*createTable('totals','totalhrs VARCHAR(12),
+            queryMysql("INSERT INTO techelect(HR)
+                        VALUES('3')");
+             
+            
+            createTable('totals','totalhrs VARCHAR(12),
                                     coursename VARCHAR(50),
-                                    one CHAR(1),
-                                    two CHAR(1),
-                                    three CHAR(1),
+                                    one CHAR(4),
+                                    two CHAR(4),
+                                    three CHAR(4),
                                     GR CHAR(1),
                                     HR CHAR(1)');
-                                    */
+                                    
         ?>
 	</body>
 </html>

@@ -9,27 +9,6 @@ if(isset($_POST['name']) && isset($_POST['email'])){
     echo "$email was entered";
 }
 
-for($j =0; $j < $rows; ++$j){
-    $result->data_seek($j);
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    $coursenum = $row['coursenum'];
-    $coursename = $row['coursename'];
-    $first = $row['one'];
-    $second = $row['two'];
-    $third = $row['three'];
-    $grade = $row['GR'];
-    $hrs = $row['HR'];
-    echo "<tr>" .
-        "<td>" . $coursenum . "</td>" .
-        "<td>" .$coursename . "</td>" .
-        "<td>" . "<input type='text' " . "value=". $row['coursenum'] . "_one" . "value='". $row['one'] ."'>" . "</td>" .
-        "<td>" . "<input type='text' ". "name=". $row['coursenum'] . "_two" . "value='". $row['two'] ."'>" . "</td>" .
-        "<td>" . "<input type='text' " . "name=". $row['coursenum'] . "_three" . "value='" . $row['three'] ."'>" . "</td>" .
-        "<td>" . "<input type='text' name='$coursenum.gr' value='$grade'>" . "</td>"  .
-        "<td>" . $hrs. "</td>" .
-        "</tr>";
-}
-
 ?>
 
 <form method="post" action="edit.php">
