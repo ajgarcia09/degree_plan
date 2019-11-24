@@ -25,8 +25,6 @@ echo "<title>$appname$userstr</title><link rel='stylesheet'" .
 if($loggedin)
     echo "<br ><ul class='menu'>" .
     "<li><a href='degreeplan.php?view=$user'>Home</a></li>" .
-    "<li><a href='signup.php'>Sign Up</a></li>" .
-    "<li><a href='login.php'>Log in</a></li>" .
     "<li><a href='logout.php'>Log out</a></li><br><br>"; 
 else
     echo "<br><ul class='menu'>" .
