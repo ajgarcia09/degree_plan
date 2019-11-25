@@ -13,12 +13,12 @@ echo "<br><br>";
 
 print_table("SELECT * FROM core", "Core Curriculum (37)*");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Core Curriculum</a></button>";
+    "<a href='edit_core.php'>Edit Core Curriculum</a></button>";
 echo "<br><br>";
 
 print_table("SELECT * FROM othermath", "Other Required Mathematics Courses (12)");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Other Math Courses</a></button>";
+    "<a href='edit_math.php'>Edit Other Math Courses</a></button>";
 echo "<br><br>";
 
 print_table("SELECT * FROM freeelect", "Free Electives (3)*");
