@@ -33,7 +33,7 @@ echo "<br><br>";
 
 print_table("SELECT * FROM upperdiv", "Upper Division Requirements (23)");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Upper Division Requirements</a></button>";
+    "<a href='edit_upperdiv.php'>Edit Upper Division Requirements</a></button>";
 echo "<br><br>";
 
 print_table("SELECT * FROM techelect", "Technical Electives (15)*");
