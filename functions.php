@@ -109,6 +109,7 @@ function print_table_for_edit($query,$table_title,$edit_file){
 <form method="post" action="$edit_file">
     <table>
     <tr>
+    <th>User</th>
     <th>Course Number</th>
     <th>Course Name</th>
     <th>1</th>
@@ -123,6 +124,7 @@ _END;
     for($j =0; $j < $rows; ++$j){
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
+        $user = $row['user'];
         $coursenum = $row['coursenum'];
         $coursename = $row['coursename'];
         $first = $row['one'];
@@ -132,6 +134,7 @@ _END;
         $hrs = $row['HR'];
         echo <<<_END
             <tr>
+            <td>$coursenum</td>
             <td>$coursenum</td>
             <td>$coursename</td>
             <td><input type='text' name='$coursenum.one' value='$first'></td>

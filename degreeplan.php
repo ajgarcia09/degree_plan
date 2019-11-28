@@ -6,6 +6,7 @@ $connection = new mysqli($hn,$un,$pw,$db);
 
 if($connection->connect_error) die($connection->connect_error);
 
+
 print_table("SELECT * FROM lowerdiv", "Lower Division Requirements (18)");
 echo "<button id='editButton'>".
         "<a href='edit_lowerdiv.php'>Edit Lower Division Requirements</a></button>";
