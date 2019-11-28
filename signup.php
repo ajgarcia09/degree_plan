@@ -70,15 +70,6 @@ if(isset($_POST['user'])){
     }
 }
 
-function setup_new_account($user){
-    setup_lowerdiv($user);
-    setup_core($user);
-    setup_othermath($user);
-    setup_freeelect($user);
-    setup_sciences($user);
-    setup_upperdiv($user);
-    setup_techelect($user);
-}
 
 /*
  * Inserts the required pre-filled values

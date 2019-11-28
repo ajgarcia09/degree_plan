@@ -62,6 +62,7 @@ function print_table($query,$table_title){
     echo <<<_END
 <table>
  <tr>
+  <th>User</th>
   <th>Course Number</th>
   <th>Course Name</th>
   <th>1</th>
@@ -77,6 +78,7 @@ _END;
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
         echo "<tr>" .
+            "<td>" . $row['user'] . "</td>" .
             "<td>" . $row['coursenum'] . "</td>" .
             "<td>" .$row['coursename'] . "</td>" .
             "<td>" . $row['one'] . "</td>" .
@@ -134,6 +136,7 @@ _END;
         $hrs = $row['HR'];
         echo <<<_END
             <tr>
+            <td>$user</td>
             <td>$coursenum</td>
             <td>$coursenum</td>
             <td>$coursename</td>

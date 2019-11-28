@@ -52,9 +52,6 @@
                                     HR TINYINT,
                                     INDEX(user)');
             
-           
-            
-            
             createTable('sciences','user CHAR(8),
                                     coursenum VARCHAR(12),
                                     coursename VARCHAR(50),
@@ -64,10 +61,6 @@
                                     GR CHAR(1),
                                     HR TINYINT,
                                     INDEX(user)');
-            
-            
-            
-             
             
             createTable('upperdiv','user CHAR(8),
                                     coursenum VARCHAR(12),
@@ -88,9 +81,7 @@
                                     GR CHAR(1),
                                     HR TINYINT,
                                     INDEX(user)');
-            
            
-                                    
         ?>
 	</body>
 </html>

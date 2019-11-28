@@ -1,43 +1,44 @@
 <?php
 require_once 'header.php';
-require_once 'functions.php';
 
 $connection = new mysqli($hn,$un,$pw,$db);
 
 if($connection->connect_error) die($connection->connect_error);
 
+var_dump($_SESSION);
+$user = $_SESSION['user'];
 
-print_table("SELECT * FROM lowerdiv", "Lower Division Requirements (18)");
+print_table("SELECT * FROM lowerdiv WHERE user='$user'", "Lower Division Requirements (18)");
 echo "<button id='editButton'>".
         "<a href='edit_lowerdiv.php'>Edit Lower Division Requirements</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM core", "Core Curriculum (37)*");
+print_table("SELECT * FROM core WHERE user='$user'", "Core Curriculum (37)*");
 echo "<button id='editButton'>".
     "<a href='edit_core.php'>Edit Core Curriculum</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM othermath", "Other Required Mathematics Courses (12)");
+print_table("SELECT * FROM othermath WHERE user='$user'", "Other Required Mathematics Courses (12)");
 echo "<button id='editButton'>".
     "<a href='edit_math.php'>Edit Other Math Courses</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM freeelect", "Free Electives (3)*");
+print_table("SELECT * FROM freeelect WHERE user='$user'", "Free Electives (3)*");
 echo "<button id='editButton'>".
     "<a href='edit.php'>Edit Free Electives</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM sciences", "Life & Physical Sciences (12)*");
+print_table("SELECT * FROM sciences WHERE user='$user'", "Life & Physical Sciences (12)*");
 echo "<button id='editButton'>".
     "<a href='edit.php'>Edit Life & Physical Sciences</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM upperdiv", "Upper Division Requirements (23)");
+print_table("SELECT * FROM upperdiv WHERE user='$user'", "Upper Division Requirements (23)");
 echo "<button id='editButton'>".
     "<a href='edit_upperdiv.php'>Edit Upper Division Requirements</a></button>";
 echo "<br><br>";
 
-print_table("SELECT * FROM techelect", "Technical Electives (15)*");
+print_table("SELECT * FROM techelect WHERE user='$user'", "Technical Electives (15)*");
 echo "<button id='editButton'>".
     "<a href='edit.php'>Edit Technical Electives</a></button>";
 echo "<br><br>";
