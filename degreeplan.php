@@ -5,7 +5,7 @@ $connection = new mysqli($hn,$un,$pw,$db);
 
 if($connection->connect_error) die($connection->connect_error);
 
-var_dump($_SESSION);
+//the currently logged in user
 $user = $_SESSION['user'];
 
 print_table("SELECT * FROM lowerdiv WHERE user='$user'", "Lower Division Requirements (18)");
