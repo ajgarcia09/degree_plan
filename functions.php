@@ -138,7 +138,6 @@ _END;
             <tr>
             <td>$user</td>
             <td>$coursenum</td>
-            <td>$coursenum</td>
             <td>$coursename</td>
             <td><input type='text' name='$coursenum.one' value='$first'></td>
             <td><input type='text' name='$coursenum.two' value='$second'></td>
