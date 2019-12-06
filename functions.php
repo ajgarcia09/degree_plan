@@ -199,7 +199,7 @@ _END;
                 <tr>
             <td>$user</td>
             <td>$coursenum</td>
-            <td><input type='text' name='$coursename.one' value='$coursename'></td>
+            <td><input type='text' name='$coursenum' value='$coursename'></td>
             <td><input type='text' name='$coursenum.one' value='$first'></td>
             <td><input type='text' name='$coursenum.two' value='$second'></td>
             <td><input type='text' name='$coursenum.three' value='$third'></td>

@@ -6,11 +6,40 @@ if($connection->connect_error) die($connection->connect_error);
 
 $user = $_SESSION['user'];
 var_dump($_POST);
+update_course_name($user);
 update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
 print_core_table_for_edit("SELECT * FROM core WHERE user='$user'", "Core Curriculum (37)","edit_core.php");
+
+function update_course_name($user){
+    if(isset($_POST['L_Phil_&_Cult+']) &&
+        $_POST['L_Phil_&_Cult+'] != queryMysql("SELECT coursename FROM core WHERE user='$user' AND coursenum='L Phil & Cult+';")){
+            $coursename = sanitizeString($_POST['L_Phil_&_Cult+']);
+            queryMysql("UPDATE core SET coursename='$coursename' WHERE user='$user' AND coursenum='L Phil & Cult+';");
+    }
+    if(isset($_POST['Creative_Arts+']) &&
+        $_POST['Creative_Arts+'] != queryMysql("SELECT coursename FROM core WHERE user='$user' AND coursenum='Creative Arts+';")){
+            $coursename = sanitizeString($_POST['Creative_Arts+']);
+            queryMysql("UPDATE core SET coursename='$coursename' WHERE user='$user' AND coursenum='Creative Arts+';");
+    }
+    if(isset($_POST['Soc_&_BehSc+']) &&
+        $_POST['Soc_&_BehSc+'] != queryMysql("SELECT coursename FROM core WHERE user='$user' AND coursenum='Soc & BehSc+';")){
+            $coursename = sanitizeString($_POST['Soc_&_BehSc+']);
+            queryMysql("UPDATE core SET coursename='$coursename' WHERE user='$user' AND coursenum='Soc & BehSc+';");
+    }
+    if(isset($_POST['Comp_Area_Opt1+']) &&
+        $_POST['Comp_Area_Opt1+'] != queryMysql("SELECT coursename FROM core WHERE user='$user' AND coursenum='Comp Area Opt1+';")){
+            $coursename = sanitizeString($_POST['Comp_Area_Opt1+']);
+            queryMysql("UPDATE core SET coursename='$coursename' WHERE user='$user' AND coursenum='Comp Area Opt1+';");
+    }
+    if(isset($_POST['Comp_Area_Opt2+']) &&
+        $_POST['Comp_Area_Opt2+'] != queryMysql("SELECT coursename FROM core WHERE user='$user' AND coursenum='Comp Area Opt2+';")){
+            $coursename = sanitizeString($_POST['Comp_Area_Opt2+']);
+            queryMysql("UPDATE core SET coursename='$coursename' WHERE user='$user' AND coursenum='Comp Area Opt2+';");
+    }
+}
 
 function update_first_attempt($user){
     if(isset($_POST['RWS_1301+_one']) &&
@@ -29,7 +58,7 @@ function update_first_attempt($user){
             queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='MATH 1411+';");
     }
     if(isset($_POST['L_Phil_&_Cult+_one']) &&
-        $_POST['L_Phil_&_Cult+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='L_Phil_&_Cult+_one';")){
+        $_POST['L_Phil_&_Cult+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='L Phil & Cult+';")){
             $first = sanitizeString($_POST['L_Phil_&_Cult+_one']);
             queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='L Phil & Cult+';");
     }
