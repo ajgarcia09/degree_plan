@@ -33,46 +33,46 @@ function update_first_attempt($user){
             $first = sanitizeString($_POST['L_Phil_&_Cult+_one']);
             queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='L Phil & Cult+';");
     }
-    if(isset($_POST['Creative Arts+_one']) &&
-        $_POST['Creative Arts+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Creative Arts+_one';")){
-            $first = sanitizeString($_POST['Creative Arts+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Creative Arts+_one';");
+    if(isset($_POST['Creative_Arts+_one']) &&
+        $_POST['Creative_Arts+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Creative Arts+';")){
+            $first = sanitizeString($_POST['Creative_Arts+_one']);
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Creative Arts+';");
     }
-    if(isset($_POST['Soc._&_Beh._Sc.+_one']) &&
-        $_POST['Soc._&_Beh._Sc.+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Soc._&_Beh._Sc.+_one';")){
-            $first = sanitizeString($_POST['Soc._&_Beh._Sc.+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Soc._&_Beh._Sc.+_one';");
+    if(isset($_POST['Soc_&_BehSc+_one']) &&
+        $_POST['Soc_&_BehSc+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Soc & BehSc+';")){
+            $first = sanitizeString($_POST['Soc_&_BehSc+_one']);
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Soc & BehSc+';");
     }
     //TODO: HANDLE BOTH COMPONENT AREA OPT(1 & 2)
-    if(isset($_POST['Comp. Area Opt.1+_one']) &&
-        $_POST['Comp. Area Opt.1+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Comp. Area Opt.1+_one';")){
-            $first = sanitizeString($_POST['Comp. Area Opt.1+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Comp. Area Opt.1+_one';");
+    if(isset($_POST['Comp_Area_Opt1+_one']) &&
+        $_POST['Comp_Area_Opt1+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Comp Area Opt1+';")){
+            $first = sanitizeString($_POST['Comp_Area_Opt1+_one']);
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Comp Area Opt1+';");
     }
-    if(isset($_POST['Comp. Area Opt.2+_one']) &&
-        $_POST['Comp. Area Opt.2+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Comp. Area Opt.2+_one';")){
-            $first = sanitizeString($_POST['Comp. Area Opt.2+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Comp. Area Opt.2+_one';");
+    if(isset($_POST['Comp_Area_Opt2+_one']) &&
+        $_POST['Comp_Area_Opt2+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Comp Area Opt2+';")){
+            $first = sanitizeString($_POST['Comp_Area_Opt2+_one']);
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='Comp Area Opt2+';");
     }    
     if(isset($_POST['HIST_1301+_one']) &&
-        $_POST['HIST_1301+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='HIST_1301+_one';")){
+        $_POST['HIST_1301+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='HIST 1301+';")){
             $first = sanitizeString($_POST['HIST_1301+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='HIST_1301+_one';");
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='HIST 1301+';");
     }
     if(isset($_POST['HIST_1302+_one']) &&
-        $_POST['HIST_1302+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='HIST_1302+_one';")){
+        $_POST['HIST_1302+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='HIST 1302+';")){
             $first = sanitizeString($_POST['HIST_1302+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='HIST_1302+_one';");
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='HIST 1302+';");
     }
     if(isset($_POST['POLS_2310+_one']) &&
-        $_POST['POLS_2310+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='POLS_2310+_one';")){
+        $_POST['POLS_2310+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='POLS 2310+';")){
             $first = sanitizeString($_POST['POLS_2310+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='POLS_2310+_one';");
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='POLS 2310+';");
     }
     if(isset($_POST['POLS_2311+_one']) &&
-        $_POST['POLS_2311+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='POLS_2311+_one';")){
+        $_POST['POLS_2311+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='POLS 2311+';")){
             $first = sanitizeString($_POST['POLS_2311+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='POLS_2311+_one';");
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='POLS 2311+';");
     }
     
     
