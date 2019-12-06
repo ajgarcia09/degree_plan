@@ -30,7 +30,7 @@ echo "<br><br>";
 
 print_table("SELECT * FROM sciences WHERE user='$user'", "Life & Physical Sciences (12)*");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Life & Physical Sciences</a></button>";
+    "<a href='edit_sciences.php'>Edit Life & Physical Sciences</a></button>";
 echo "<br><br>";
 
 print_table("SELECT * FROM upperdiv WHERE user='$user'", "Upper Division Requirements (23)");
