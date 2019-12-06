@@ -107,19 +107,21 @@ function setup_core($user){
     
     //***CORE ELECTIVES***
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','L., Phil., & Cult.+', '3')");
+                        VALUES('$user','L Phil & Cult+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
                         VALUES('$user','Creative Arts+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','Soc. & Beh. Sc.+', '3')");
+                        VALUES('$user','Soc & BehSc+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','Comp. Area Opt.1+', '3')");
+                        VALUES('$user','Comp Area Opt1+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','Comp. Area Opt.2+', '3')");
+                        VALUES('$user','Comp Area Opt2+', '3')");
+    
+    //***CORE ELECTIVES***
     
     queryMysql("INSERT INTO core(user,coursenum,coursename,HR)
                         VALUES('$user','HIST 1301+', 'History of U.S. to 1865', '3')");

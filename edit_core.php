@@ -6,7 +6,7 @@ if($connection->connect_error) die($connection->connect_error);
 
 $user = $_SESSION['user'];
 var_dump($_POST);
-//update_first_attempt($user);
+update_first_attempt($user);
 //update_second_attempt($user);
 //update_third_attempt($user);
 //update_grades($user);
@@ -28,10 +28,10 @@ function update_first_attempt($user){
             $first = sanitizeString($_POST['MATH_1411+_one']);
             queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='MATH 1411+';");
     }
-    if(isset($_POST['L.,_Phil.,_&_Cult.+_one']) &&
-        $_POST['L.,_Phil.,_&_Cult.+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='L.,_Phil.,_&_Cult.+_one';")){
-            $first = sanitizeString($_POST['L.,_Phil.,_&_Cult.+_one']);
-            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='L.,_Phil.,_&_Cult.+_one';");
+    if(isset($_POST['L_Phil_&_Cult+_one']) &&
+        $_POST['L_Phil_&_Cult+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='L_Phil_&_Cult+_one';")){
+            $first = sanitizeString($_POST['L_Phil_&_Cult+_one']);
+            queryMysql("UPDATE core SET one='$first' WHERE user='$user' AND coursenum='L Phil & Cult+';");
     }
     if(isset($_POST['Creative Arts+_one']) &&
         $_POST['Creative Arts+_one'] != queryMysql("SELECT one FROM core WHERE user='$user' AND coursenum='Creative Arts+_one';")){

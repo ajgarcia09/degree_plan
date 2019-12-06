@@ -192,9 +192,9 @@ _END;
         $third = $row['three'];
         $grade = $row['GR'];
         $hrs = $row['HR'];
-        if($coursenum == "L., Phil., & Cult.+" || $coursenum == "Creative Arts+" ||
-            $coursenum == "Soc. & Beh. Sc.+" || $coursenum == "Comp. Area Opt.1+" || 
-            $coursenum == "Comp. Area Opt.2+"){
+        if($coursenum == "L Phil & Cult+" || $coursenum == "Creative Arts+" ||
+            $coursenum == "Soc & BehSc+" || $coursenum == "Comp Area Opt1+" || 
+            $coursenum == "Comp Area Opt2+"){
             echo <<<_END
                 <tr>
             <td>$user</td>
