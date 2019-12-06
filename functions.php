@@ -234,4 +234,62 @@ _END;
     
     
 }
+
+function print_freeelect_table_for_edit($query,$table_title,$edit_file){
+    global $connection;
+    $result = $connection->query($query);
+    if(!$result) die ($connection->connect_error);
+    
+    echo "<th><b>$table_title</b></th>";
+    echo <<<_END
+    <form method="post" action="$edit_file">
+    <table>
+        <tr>
+        <th>User</th>
+        <th>Course Number</th>
+        <th>Course Name</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>GR</th>
+        <th>HR</th>
+        </tr>
+    _END;
+    
+    $result->data_seek(0);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    $user = $row['user'];
+    $coursenum = $row['coursenum'];
+    $coursename = $row['coursename'];
+    $first = $row['one'];
+    $second = $row['two'];
+    $third = $row['three'];
+    $grade = $row['GR'];
+    $hrs = $row['HR'];
+  
+     echo <<<_END
+       <tr>
+       <td>$user</td>
+       <td><input type='text' name='freenum' value='$coursenum'></td>
+       <td><input type='text' name='freename' value='$coursename'></td>
+       <td><input type='text' name='first' value='$first'></td>
+       <td><input type='text' name='second' value='$second'></td>
+       <td><input type='text' name='third' value='$third'></td>
+       <td><input type='text' name='grade' value='$grade'></td>
+       <td>$hrs</td>
+       </tr>
+       _END;
+     
+     echo <<<_END
+        </table>
+        <input type="submit" value="Save Changes">
+        </form>
+        <br><br>
+    _END;
+    
+
+$result->close();
+    
+    
+}
 ?>

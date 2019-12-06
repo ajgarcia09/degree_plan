@@ -25,7 +25,7 @@ echo "<br><br>";
 
 print_table("SELECT * FROM freeelect WHERE user='$user'", "Free Electives (3)*");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Free Electives</a></button>";
+    "<a href='edit_free_elect.php'>Edit Free Electives</a></button>";
 echo "<br><br>";
 
 print_table("SELECT * FROM sciences WHERE user='$user'", "Life & Physical Sciences (12)*");
