@@ -1,6 +1,5 @@
 <?php
 require_once 'header.php';
-require_once 'functions.php';
 
 $connection = new mysqli($hn,$un,$pw,$db);
 

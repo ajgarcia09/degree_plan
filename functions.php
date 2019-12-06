@@ -156,4 +156,82 @@ _END;
 _END;
     $result->close();
 }
+
+function print_core_table_for_edit($query,$table_title,$edit_file){
+    global $connection;
+    $result = $connection->query($query);
+    if(!$result) die ($connection->connect_error);
+    $rows = $result->num_rows;
+    
+    echo "<th><b>$table_title</b></th>";
+    echo <<<_END
+    
+<form method="post" action="$edit_file">
+    <table>
+    <tr>
+    <th>User</th>
+    <th>Course Number</th>
+    <th>Course Name</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>GR</th>
+    <th>HR</th>
+    </tr>
+    
+_END;
+    
+    for($j =0; $j < $rows; ++$j){
+        $result->data_seek($j);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        $user = $row['user'];
+        $coursenum = $row['coursenum'];
+        $coursename = $row['coursename'];
+        $first = $row['one'];
+        $second = $row['two'];
+        $third = $row['three'];
+        $grade = $row['GR'];
+        $hrs = $row['HR'];
+        if($coursenum == "L., Phil., & Cult.+" || $coursenum == "Creative Arts+" ||
+            $coursenum == "Soc. & Beh. Sc.+" || $coursenum == "Comp. Area Opt.1+" || 
+            $coursenum == "Comp. Area Opt.2+"){
+            echo <<<_END
+                <tr>
+            <td>$user</td>
+            <td>$coursenum</td>
+            <td><input type='text' name='$coursename.one' value='$coursename'></td>
+            <td><input type='text' name='$coursenum.one' value='$first'></td>
+            <td><input type='text' name='$coursenum.two' value='$second'></td>
+            <td><input type='text' name='$coursenum.three' value='$third'></td>
+            <td><input type='text' name='$coursenum.GR' value='$grade'></td>
+            <td>$hrs</td>
+            </tr>
+            _END;
+        }
+        else{
+            echo <<<_END
+                <tr>
+                <td>$user</td>
+                <td>$coursenum</td>
+                <td>$coursename</td>
+                <td><input type='text' name='$coursenum.one' value='$first'></td>
+                <td><input type='text' name='$coursenum.two' value='$second'></td>
+                <td><input type='text' name='$coursenum.three' value='$third'></td>
+                <td><input type='text' name='$coursenum.GR' value='$grade'></td>
+                <td>$hrs</td>
+                </tr>
+            _END;
+        }
+    }
+    
+    echo <<<_END
+    </table>
+    <input type="submit" value="Save Changes">
+    </form>
+    <br><br>
+_END;
+    $result->close();
+    
+    
+}
 ?>

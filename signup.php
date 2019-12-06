@@ -116,16 +116,16 @@ function setup_core($user){
                         VALUES('$user','Soc. & Beh. Sc.+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','Comp. Area Opt.+', '3')");
+                        VALUES('$user','Comp. Area Opt.1+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum, HR)
-                        VALUES('$user','Comp. Area Opt.+', '3')");
+                        VALUES('$user','Comp. Area Opt.2+', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum,coursename,HR)
                         VALUES('$user','HIST 1301+', 'History of U.S. to 1865', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum,coursename,HR)
-                        VALUES('$user','HIST 1301+', 'History of U.S. since 1865', '3')");
+                        VALUES('$user','HIST 1302+', 'History of U.S. since 1865', '3')");
     
     queryMysql("INSERT INTO core(user,coursenum,coursename,HR)
                         VALUES('$user','POLS 2310+', 'Introduction to Politics', '3')");
