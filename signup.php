@@ -193,20 +193,20 @@ function setup_upperdiv($user){
 }
 
 function setup_techelect($user){
-    queryMysql("INSERT INTO techelect(user,HR)
-                        VALUES('$user','3')");
+    queryMysql("INSERT INTO techelect(user,HR,hidden)
+                        VALUES('$user','3','elect1')");
     
-    queryMysql("INSERT INTO techelect(user,HR)
-                        VALUES('$user','3')");
+    queryMysql("INSERT INTO techelect(user,HR,hidden)
+                        VALUES('$user','3','elect2')");
     
-    queryMysql("INSERT INTO techelect(user,HR)
-                        VALUES('$user','3')");
+    queryMysql("INSERT INTO techelect(user,HR,hidden)
+                        VALUES('$user','3','elect3')");
     
-    queryMysql("INSERT INTO techelect(user,HR)
-                        VALUES('$user','3')");
+    queryMysql("INSERT INTO techelect(user,HR,hidden)
+                        VALUES('$user','3','elect4')");
     
-    queryMysql("INSERT INTO techelect(user,HR)
-                        VALUES('$user','3')");
+    queryMysql("INSERT INTO techelect(user,HR,hidden)
+                        VALUES('$user','3','elect5')");
 }
 
 echo <<<_END

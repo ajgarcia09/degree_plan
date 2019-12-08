@@ -40,7 +40,7 @@ echo "<br><br>";
 
 print_table("SELECT * FROM techelect WHERE user='$user'", "Technical Electives (15)*");
 echo "<button id='editButton'>".
-    "<a href='edit.php'>Edit Technical Electives</a></button>";
+    "<a href='edit_techelect.php'>Edit Technical Electives</a></button>";
 echo "<br><br>";
 
 
