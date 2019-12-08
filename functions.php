@@ -418,6 +418,8 @@ _END;
     echo <<<_END
     </table>
     <input type="submit" value="Save Changes">
+    <button type="reset" value="Reset">Reset</button>
+    <button><a href='degreeplan.php'>Return to Home</a></button>
     </form>
     <br><br>
 _END;
