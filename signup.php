@@ -159,11 +159,11 @@ function setup_sciences($user){
     queryMysql("INSERT INTO sciences(user,coursenum,coursename,HR)
                         VALUES('$user','PHYS 2420', 'Introductory Mechanics', '4')");
     
-    queryMysql("INSERT INTO sciences(user,HR)
-                        VALUES('$user','4')");
+    queryMysql("INSERT INTO sciences(user,HR,hidden)
+                        VALUES('$user','4','science1')");
     
-    queryMysql("INSERT INTO sciences(user,HR)
-                        VALUES('$user','4')");
+    queryMysql("INSERT INTO sciences(user,HR,hidden)
+                        VALUES('$user','4','science2')");
 }
 
 function setup_upperdiv($user){

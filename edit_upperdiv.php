@@ -86,7 +86,7 @@ function update_second_attempt($user){
     }
     if(isset($_POST['CS_4310+_two']) &&
         $_POST['CS_4310+_two'] != queryMysql("SELECT two FROM upperdiv WHERE user='$user' AND coursenum='CS 4310+';")){
-        $second= sanitizeString($_POST['CS_4310+_one']);
+        $second= sanitizeString($_POST['CS_4310+_two']);
         queryMysql("UPDATE upperdiv SET two='$second' WHERE user='$user' AND coursenum='CS 4310+';");
     }
     if(isset($_POST['CS_4311_two']) &&

@@ -268,8 +268,8 @@ function print_freeelect_table_for_edit($query,$table_title,$edit_file){
      echo <<<_END
        <tr>
        <td>$user</td>
-       <td><input type='text' name='freenum' value='$coursenum'></td>
-       <td><input type='text' name='freename' value='$coursename'></td>
+       <td><input type='text' name='freenum' value='$coursenum' required></td>
+       <td><input type='text' name='freename' value='$coursename' required></td>
        <td><input type='text' name='first' value='$first'></td>
        <td><input type='text' name='second' value='$second'></td>
        <td><input type='text' name='third' value='$third'></td>
@@ -324,8 +324,8 @@ _END;
         $third = $row['three'];
         $grade = $row['GR'];
         $hrs = $row['HR'];
+        $hidden = $row['hidden'];
         //counter to keep track of which of the 2 blank rows is being populated
-        $choice = 1;
         if($coursenum == "PHYS 2420"){
           echo <<<_END
             <tr>
@@ -344,12 +344,12 @@ _END;
             echo <<<_END
                 <tr>
                 <td>$user</td>
-                <td><input type='text' name='coursenum.$choice' value='$coursenum'></td>
-                <td><input type='text' name='coursename.$choice' value='$coursename'></td>
-                <td><input type='text' name='first.$choice' value='$first'></td>
-                <td><input type='text' name='second.$choice' value='$second'></td>
-                <td><input type='text' name='third.$choice' value='$third'></td>
-                <td><input type='text' name='grade.$choice' value='$grade'></td>
+                <td><input type='text' name='coursenum.$hidden' value='$coursenum'></td>
+                <td><input type='text' name='coursename.$hidden' value='$coursename'></td>
+                <td><input type='text' name='first.$hidden' value='$first'></td>
+                <td><input type='text' name='second.$hidden' value='$second'></td>
+                <td><input type='text' name='third.$hidden' value='$third'></td>
+                <td><input type='text' name='grade.$hidden' value='$grade'></td>
                 <td>$hrs</td>
                 </tr>
             _END;

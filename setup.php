@@ -60,6 +60,7 @@
                                     three CHAR(4),
                                     GR CHAR(1),
                                     HR TINYINT,
+                                    hidden VARCHAR(12),
                                     INDEX(user)');
             
             createTable('upperdiv','user CHAR(8),
