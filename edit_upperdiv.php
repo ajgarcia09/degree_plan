@@ -12,6 +12,7 @@ update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
+show_form_edit_example();
 print_table_for_edit("SELECT * FROM upperdiv WHERE user='$user'", "Upper Division Requirements (23)","edit_upperdiv.php");
 
 

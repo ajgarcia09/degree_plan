@@ -13,6 +13,7 @@ update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
+show_form_edit_example();
 print_table_for_edit("SELECT * FROM lowerdiv WHERE user='$user'", "Lower Division Requirements (18)","edit_lowerdiv.php");
 
 /*

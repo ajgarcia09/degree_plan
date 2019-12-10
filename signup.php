@@ -69,7 +69,7 @@ if(isset($_POST['user'])){
             setup_sciences($user);
             setup_upperdiv($user);
             setup_techelect($user);
-            die("<h4>Account created</h4>Please Log in.<br><br>");
+            die("<span class='available'>&nbsp;&#x2714 Account Created</span><br>Please Log in.<br><br>");
         }
     }
 }

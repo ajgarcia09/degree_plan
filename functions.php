@@ -52,7 +52,44 @@ function showProfile($user){
         }
 }
 
+function show_form_edit_example(){
+    echo <<<_END
+        <h3> How to log your courses </h3>
+        Please use the following notation to log your 1st, 2nd, and/or 3rd attempt:<br>
+        Fall = FAxx <br>
+        Spring = SPxx <br>
+        Summer = SUxx <br>
+        Maymester = MYxx <br>
+        Wintermester = WIxx <br>
+        Where xx are the last 2 digits of the year you took the course. <br>
 
+        <h3>Example: I took Intro to CS during Summer 2015</h3>
+        <table>
+        <tr>
+            <th>Course Number</th>
+            <th>Course Name</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>GR</th>
+            <th>HR</th>
+        </tr>
+        <tr>
+            <td>CS 1401+</td>
+            <td>Intro. to Computer Science</td>
+            <td style='color:red'>SU15</td>
+            <td></td>
+            <td></td>
+            <td style='color:red'>A</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <br><br>
+ 
+_END;
+    
+        
+}
 
 function print_table($query,$table_title){
     global $connection;

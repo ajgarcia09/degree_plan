@@ -5,12 +5,12 @@ $connection = new mysqli($hn,$un,$pw,$db);
 if($connection->connect_error) die($connection->connect_error);
 
 $user = $_SESSION['user'];
-var_dump($_POST);
 update_course_name($user);
 update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
+show_form_edit_example();
 print_core_table_for_edit("SELECT * FROM core WHERE user='$user'", "Core Curriculum (37)","edit_core.php");
 
 function update_course_name($user){

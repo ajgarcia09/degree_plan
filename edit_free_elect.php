@@ -4,9 +4,9 @@ require_once 'header.php';
 $connection = new mysqli($hn,$un,$pw,$db);
 
 if($connection->connect_error) die($connection->connect_error);
-var_dump($_POST);
 $user = $_SESSION['user'];
 update_free_elect($user);
+show_form_edit_example();
 print_freeelect_table_for_edit("SELECT * FROM freeelect  WHERE user='$user'", "Free Electives (3)*","edit_free_elect.php");
 
 

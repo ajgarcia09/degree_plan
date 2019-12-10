@@ -6,13 +6,13 @@ $connection = new mysqli($hn,$un,$pw,$db);
 if($connection->connect_error) die($connection->connect_error);
 
 $user = $_SESSION['user'];
-var_dump($_POST);
 update_course_num($user);
 update_course_name($user);
 update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
+show_form_edit_example();
 print_sciences_table_for_edit("SELECT * FROM sciences WHERE user='$user'", "Life & Physical Sciences (12)*","edit_sciences.php");
 
 function update_course_num($user){

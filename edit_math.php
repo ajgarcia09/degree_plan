@@ -10,6 +10,7 @@ update_first_attempt($user);
 update_second_attempt($user);
 update_third_attempt($user);
 update_grades($user);
+show_form_edit_example();
 print_table_for_edit("SELECT * FROM othermath WHERE user='$user'", "Other Required Mathematics Courses (12)","edit_math.php");
 
 function update_first_attempt($user){
