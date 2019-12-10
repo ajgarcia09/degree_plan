@@ -7,7 +7,8 @@ if($connection->connect_error) die($connection->connect_error);
 
 //the currently logged in user
 $user = $_SESSION['user'];
-
+//TODO remove var dumps
+//var_dump($_SESSION);
 print_table("SELECT * FROM lowerdiv WHERE user='$user'", "Lower Division Requirements (18)");
 echo "<button id='editButton'>".
         "<a href='edit_lowerdiv.php'>Edit Lower Division Requirements</a></button>";

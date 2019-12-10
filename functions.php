@@ -52,6 +52,8 @@ function showProfile($user){
         }
 }
 
+
+
 function print_table($query,$table_title){
     global $connection;
     $result = $connection->query($query);
@@ -62,7 +64,6 @@ function print_table($query,$table_title){
     echo <<<_END
 <table>
  <tr>
-  <th>User</th>
   <th>Course Number</th>
   <th>Course Name</th>
   <th>1</th>
@@ -78,7 +79,6 @@ _END;
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
         echo "<tr>" .
-            "<td>" . $row['user'] . "</td>" .
             "<td>" . $row['coursenum'] . "</td>" .
             "<td>" .$row['coursename'] . "</td>" .
             "<td>" . $row['one'] . "</td>" .
@@ -111,7 +111,6 @@ function print_table_for_edit($query,$table_title,$edit_file){
 <form method="post" action="$edit_file">
     <table>
     <tr>
-    <th>User</th>
     <th>Course Number</th>
     <th>Course Name</th>
     <th>1</th>
@@ -136,7 +135,6 @@ _END;
         $hrs = $row['HR'];
         echo <<<_END
             <tr>
-            <td>$user</td>
             <td>$coursenum</td>
             <td>$coursename</td>
             <td><input type='text' name='$coursenum.one' value='$first'></td>
@@ -151,6 +149,8 @@ _END;
     echo <<<_END
     </table>
     <input type="submit" value="Save Changes">
+    <button type="reset" value="Reset">Reset</button>
+    <button><a href='degreeplan.php'>Return to Home</a></button>
     </form>
     <br><br>
 _END;
@@ -227,6 +227,8 @@ _END;
     echo <<<_END
     </table>
     <input type="submit" value="Save Changes">
+    <button type="reset" value="Reset">Reset</button>
+    <button><a href='degreeplan.php'>Return to Home</a></button>
     </form>
     <br><br>
 _END;
@@ -281,6 +283,8 @@ function print_freeelect_table_for_edit($query,$table_title,$edit_file){
      echo <<<_END
         </table>
         <input type="submit" value="Save Changes">
+        <button type="reset" value="Reset">Reset</button>
+        <button><a href='degreeplan.php'>Return to Home</a></button>
         </form>
         <br><br>
     _END;
@@ -359,6 +363,8 @@ _END;
     echo <<<_END
     </table>
     <input type="submit" value="Save Changes">
+    <button type="reset" value="Reset">Reset</button>
+    <button><a href='degreeplan.php'>Return to Home</a></button>
     </form>
     <br><br>
 _END;

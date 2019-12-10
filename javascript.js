@@ -12,22 +12,6 @@ image.onload = function(){
 	context.drawImage(image, 64,32)
 }
 
-function O(obj){
-	if(typeof obj == 'object') return obj
-	else return document.getElementById(obj)
-}
-
-function S(obj){
-	return O(obj).style
-}
-
-function C(name){
-	var elements = document.getElementsByTagName('*')
-	var objects = []
-	
-	for(var i=0; i < elements.length; ++i){
-		if(elements[i].className == name)
-			objects.push(elements[i])
-	}
-	return objects
-}
+function O(i) { return typeof i == 'object' ? i : document.getElementById(i) }
+function S(i) { return O(i).style                                            }
+function C(i) { return document.getElementsByClassName(i)                    }
