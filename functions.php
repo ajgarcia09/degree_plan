@@ -206,7 +206,6 @@ function print_core_table_for_edit($query,$table_title,$edit_file){
 <form method="post" action="$edit_file">
     <table>
     <tr>
-    <th>User</th>
     <th>Course Number</th>
     <th>Course Name</th>
     <th>1</th>
@@ -221,7 +220,6 @@ _END;
     for($j =0; $j < $rows; ++$j){
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        $user = $row['user'];
         $coursenum = $row['coursenum'];
         $coursename = $row['coursename'];
         $first = $row['one'];
@@ -234,7 +232,6 @@ _END;
             $coursenum == "Comp Area Opt2+"){
             echo <<<_END
                 <tr>
-            <td>$user</td>
             <td>$coursenum</td>
             <td><input type='text' name='$coursenum' value='$coursename'></td>
             <td><input type='text' name='$coursenum.one' value='$first'></td>
@@ -248,7 +245,6 @@ _END;
         else{
             echo <<<_END
                 <tr>
-                <td>$user</td>
                 <td>$coursenum</td>
                 <td>$coursename</td>
                 <td><input type='text' name='$coursenum.one' value='$first'></td>
@@ -282,7 +278,6 @@ function print_freeelect_table_for_edit($query,$table_title,$edit_file){
     <form method="post" action="$edit_file">
     <table>
         <tr>
-        <th>User</th>
         <th>Course Number</th>
         <th>Course Name</th>
         <th>1</th>
@@ -295,7 +290,6 @@ function print_freeelect_table_for_edit($query,$table_title,$edit_file){
     
     $result->data_seek(0);
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    $user = $row['user'];
     $coursenum = $row['coursenum'];
     $coursename = $row['coursename'];
     $first = $row['one'];
@@ -306,7 +300,6 @@ function print_freeelect_table_for_edit($query,$table_title,$edit_file){
   
      echo <<<_END
        <tr>
-       <td>$user</td>
        <td><input type='text' name='freenum' value='$coursenum' required></td>
        <td><input type='text' name='freename' value='$coursename' required></td>
        <td><input type='text' name='first' value='$first'></td>
@@ -342,7 +335,6 @@ function print_sciences_table_for_edit($query,$table_title,$edit_file){
 <form method="post" action="$edit_file">
     <table>
     <tr>
-    <th>User</th>
     <th>Course Number</th>
     <th>Course Name</th>
     <th>1</th>
@@ -357,7 +349,6 @@ _END;
     for($j =0; $j < $rows; ++$j){
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        $user = $row['user'];
         $coursenum = $row['coursenum'];
         $coursename = $row['coursename'];
         $first = $row['one'];
@@ -370,7 +361,6 @@ _END;
         if($coursenum == "PHYS 2420"){
           echo <<<_END
             <tr>
-                <td>$user</td>
                 <td>$coursenum</td>
                 <td>$coursename</td>
                 <td><input type='text' name='$coursenum.one' value='$first'></td>
@@ -384,7 +374,6 @@ _END;
         else{
             echo <<<_END
                 <tr>
-                <td>$user</td>
                 <td><input type='text' name='coursenum.$hidden' value='$coursenum'></td>
                 <td><input type='text' name='coursename.$hidden' value='$coursename'></td>
                 <td><input type='text' name='first.$hidden' value='$first'></td>
@@ -420,7 +409,6 @@ function print_techelect_table_for_edit($query,$table_title,$edit_file){
 <form method="post" action="$edit_file">
     <table>
     <tr>
-    <th>User</th>
     <th>Course Number</th>
     <th>Course Name</th>
     <th>1</th>
@@ -435,7 +423,6 @@ _END;
     for($j =0; $j < $rows; ++$j){
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        $user = $row['user'];
         $coursenum = $row['coursenum'];
         $coursename = $row['coursename'];
         $first = $row['one'];
@@ -446,7 +433,6 @@ _END;
         $hidden = $row['hidden'];
         echo <<<_END
             <tr>
-                <td>$user</td>
                 <td><input type='text' name='coursenum.$hidden' value='$coursenum'></td>
                 <td><input type='text' name='coursename.$hidden' value='$coursename'></td>
                 <td><input type='text' name='first.$hidden' value='$first'></td>
