@@ -7,6 +7,7 @@ if(isset($_POST['user'])){
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
     
+    
     if($user == "" || $pass == "")
         echo "Not all fields were entered<br>";
    else{

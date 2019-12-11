@@ -10,9 +10,13 @@
             require_once 'functions.php';
             
             createTable('students','user CHAR(8),
-                                    pass CHAR(4)');
+                                    pass CHAR(4),
+                                    firstname VARCHAR(25),
+                                    lastname VARCHAR(25),
+                                    INDEX(user)');
             //admin account
-            queryMysql("INSERT INTO students VALUES('starlord',1914);");
+           queryMysql("INSERT INTO students(user,pass) 
+                                        VALUES('starlord',1914);");
             
             createTable('lowerdiv','user CHAR(8),
                                     coursenum VARCHAR(12),

@@ -44,13 +44,15 @@ echo <<<_END
 <h4>And enter the last 4 digits of your UTEP ID as your password.</h4> 
 _END;
 
-$error = $user = $pass = "";
+$error = $user = $pass = $firstname = $lastname = "";
 if(isset($_SESSION['user'])) destroySession();
 
 if(isset($_POST['user'])){
     
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
+    $firstname = sanitizeString($_POST['firstname']);
+    $lastname = sanitizeString($_POST['lastname']);
    
     
     if($user == "" || $pass == "")
@@ -61,7 +63,7 @@ if(isset($_POST['user'])){
         if($result->num_rows)
             $error = "That username already exists<br><br>";
         else{
-            queryMysql("INSERT INTO students VALUES('$user','$pass')");
+            queryMysql("INSERT INTO students VALUES('$user','$pass','$firstname','$lastname')");
             setup_lowerdiv($user);
             setup_core($user);
             setup_othermath($user);
@@ -219,7 +221,11 @@ echo <<<_END
     <input type='text' maxlength='16' name='user' value='$user' placeholder='Your UTEP ID'
         onBlur='checkUser(this)'><span id='info'></span><br>
     <span class='fieldname'>Password</span>
-    <input type='password' maxlength='16' name='pass' value='$pass' placeholder='Last 4 digits of UTEP ID'>
+    <input type='password' maxlength='16' name='pass' value='$pass' placeholder='Last 4 digits of UTEP ID'><br>
+    <span class='fieldname'>First Name</span>
+    <input type='text' maxlength='25' name='firstname' value='$firstname' placeholder='Your first name'><br>
+    <span class='fieldname'>Last Name</span>
+    <input type='text' maxlength='25' name='lastname' value='$lastname' placeholder='Your last name'><br>
     <br><br>
 _END;
 ?>

@@ -13,7 +13,7 @@ if($connection->connect_error) die($connection->connect_error);
 
 function createTable($name, $query){
     queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
-    echo "Table '$name' created or already exists","\n";
+    echo "Table '$name' created or already exists","<br>";
 }
 
 function queryMysql($query){
@@ -40,16 +40,18 @@ function sanitizeString($str){
     return $connection->real_escape_string($str);
 }
 
-function showProfile($user){
-    if(file_exists("$user.jpg"))
-        echo "<img src='$user.jpg' style='float:left;'>";
+function print_firstname_lastname($query){
+    global $connection;
+    $result = $connection->query($query);
+    if(!$result) die ($connection->connect_error);
     
-        $result = queryMysql("SELECT * FROM profiles WHERE user='$user'");
-        
-        if($result->num_rows){
-            $row = $result->fetch_array(MYSQLI_ASSOC);
-            echo stripslashes($row['text']) . "<br style='clear:left;'><br>";
-        }
+    $result->data_seek(0);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    $firstname = $row['firstname'];
+    $lastname = $row['lastname'];
+    
+    echo "<h3>Welcome, $firstname $lastname</h3><br>";
+    
 }
 
 function show_form_edit_example(){
