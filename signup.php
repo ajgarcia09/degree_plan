@@ -218,14 +218,14 @@ function setup_techelect($user){
 echo <<<_END
     <form method='post' action='signup.php'>$error
     <span class='fieldname'>Username</span>
-    <input type='text' maxlength='16' name='user' value='$user' placeholder='Your UTEP ID'
+    <input type='text' maxlength='8' name='user' value='$user' placeholder='Your UTEP ID'
         onBlur='checkUser(this)'><span id='info'></span><br>
     <span class='fieldname'>Password</span>
-    <input type='password' maxlength='16' name='pass' value='$pass' placeholder='Last 4 digits of UTEP ID'><br>
+    <input type='password' maxlength='4' name='pass' value='$pass' placeholder='Last 4 digits of UTEP ID'><br>
     <span class='fieldname'>First Name</span>
-    <input type='text' maxlength='25' name='firstname' value='$firstname' placeholder='Your first name'><br>
+    <input type='text' maxlength='30' name='firstname' value='$firstname' placeholder='Your first name'><br>
     <span class='fieldname'>Last Name</span>
-    <input type='text' maxlength='25' name='lastname' value='$lastname' placeholder='Your last name'><br>
+    <input type='text' maxlength='30' name='lastname' value='$lastname' placeholder='Your last name'><br>
     <br><br>
 _END;
 ?>

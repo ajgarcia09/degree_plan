@@ -13,7 +13,9 @@ if($user == 'starlord'){
     $connection->close();
 }
 else{
-    print_firstname_lastname("SELECT firstname, lastname FROM students WHERE user='$user';");
+    $firstname = get_firstname("SELECT firstname FROM students WHERE user='$user';");
+    $lastname = get_lastname("SELECT lastname FROM students WHERE user='$user';");
+    echo "<h3>Welcome, $firstname $lastname</h3>";
     print_student_tables($user); 
     $connection->close();
     

@@ -40,18 +40,26 @@ function sanitizeString($str){
     return $connection->real_escape_string($str);
 }
 
-function print_firstname_lastname($query){
+function get_firstname($query){
     global $connection;
     $result = $connection->query($query);
     if(!$result) die ($connection->connect_error);
-    
     $result->data_seek(0);
     $row = $result->fetch_array(MYSQLI_ASSOC);
     $firstname = $row['firstname'];
+    return $firstname;
+    $result->close();
+}
+
+function get_lastname($query){
+    global $connection;
+    $result = $connection->query($query);
+    if(!$result) die ($connection->connect_error);
+    $result->data_seek(0);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
     $lastname = $row['lastname'];
-    
-    echo "<h3>Welcome, $firstname $lastname</h3><br>";
-    
+    return $lastname;
+    $result->close();
 }
 
 function show_form_edit_example(){
@@ -104,15 +112,19 @@ function print_students_table($query,$table_title){
         <table>
             <tr>
                 <th>StudentID</th>
+                <th>Student Name</th>
             </tr>
         _END;
         for($j =0; $j < $rows; ++$j){
             $result->data_seek($j);
             $row = $result->fetch_array(MYSQLI_ASSOC);
             $student = $row['user'];
+            $firstname= $row['firstname'];
+            $lastname= $row['lastname'];
             echo <<<_END
                 <tr>
                     <td><a href='view_student.php?view=$student'>$student</a></td>
+                    <td>$lastname, $firstname</td>
                 </tr>
             _END;
           

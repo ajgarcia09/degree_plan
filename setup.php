@@ -11,8 +11,8 @@
             
             createTable('students','user CHAR(8),
                                     pass CHAR(4),
-                                    firstname VARCHAR(25),
-                                    lastname VARCHAR(25),
+                                    firstname VARCHAR(30),
+                                    lastname VARCHAR(30),
                                     INDEX(user)');
             //admin account
            queryMysql("INSERT INTO students(user,pass) 
