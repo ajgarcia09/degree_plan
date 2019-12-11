@@ -11,6 +11,8 @@
             
             createTable('students','user CHAR(8),
                                     pass CHAR(4)');
+            //admin account
+            queryMysql("INSERT INTO students VALUES('starlord',1914);");
             
             createTable('lowerdiv','user CHAR(8),
                                     coursenum VARCHAR(12),

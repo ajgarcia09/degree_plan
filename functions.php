@@ -110,7 +110,7 @@ function print_students_table($query,$table_title){
             $student = $row['user'];
             echo <<<_END
                 <tr>
-                    <td>$student</td>
+                    <td><a href='view_student.php?view=$student'>$student</a></td>
                 </tr>
             _END;
           
@@ -482,6 +482,44 @@ _END;
     <br><br>
 _END;
     $result->close();
+}
+
+function print_student_tables($user){
+    print_table("SELECT * FROM lowerdiv WHERE user='$user'", "Lower Division Requirements (18)");
+    echo "<button id='editButton'>".
+        "<a href='edit_lowerdiv.php'>Edit Lower Division Requirements</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM core WHERE user='$user'", "Core Curriculum (37)*");
+    echo "<button id='editButton'>".
+        "<a href='edit_core.php'>Edit Core Curriculum</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM othermath WHERE user='$user'", "Other Required Mathematics Courses (12)");
+    echo "<button id='editButton'>".
+        "<a href='edit_math.php'>Edit Other Math Courses</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM freeelect WHERE user='$user'", "Free Electives (3)*");
+    echo "<button id='editButton'>".
+        "<a href='edit_free_elect.php'>Edit Free Electives</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM sciences WHERE user='$user'", "Life & Physical Sciences (12)*");
+    echo "<button id='editButton'>".
+        "<a href='edit_sciences.php'>Edit Life & Physical Sciences</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM upperdiv WHERE user='$user'", "Upper Division Requirements (23)");
+    echo "<button id='editButton'>".
+        "<a href='edit_upperdiv.php'>Edit Upper Division Requirements</a></button>";
+    echo "<br><br>";
+    
+    print_table("SELECT * FROM techelect WHERE user='$user'", "Technical Electives (15)*");
+    echo "<button id='editButton'>".
+        "<a href='edit_techelect.php'>Edit Technical Electives</a></button>";
+    echo "<br><br>";
+    
 }
 
 ?>
