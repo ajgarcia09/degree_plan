@@ -91,6 +91,36 @@ _END;
         
 }
 
+function print_students_table($query,$table_title){
+        global $connection;
+        $result = $connection->query($query);
+        if(!$result) die ($connection->connect_error);
+        $rows = $result->num_rows;
+        
+        echo "<th><b>$table_title</b></th>";
+        echo <<<_END
+        <table>
+            <tr>
+                <th>StudentID</th>
+            </tr>
+        _END;
+        for($j =0; $j < $rows; ++$j){
+            $result->data_seek($j);
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            $student = $row['user'];
+            echo <<<_END
+                <tr>
+                    <td>$student</td>
+                </tr>
+            _END;
+          
+        }
+        
+        echo "</table>";
+        echo "<br><br>";
+        $result->close();
+}
+
 function print_table($query,$table_title){
     global $connection;
     $result = $connection->query($query);
@@ -162,7 +192,6 @@ _END;
     for($j =0; $j < $rows; ++$j){
         $result->data_seek($j);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        $user = $row['user'];
         $coursenum = $row['coursenum'];
         $coursename = $row['coursename'];
         $first = $row['one'];
